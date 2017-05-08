@@ -34,7 +34,7 @@ public class SearchServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SearchServlet</title>");            
+            out.println("<title>Servlet SearchServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet SearchServlet at " + request.getContextPath() + "</h1>");
@@ -55,9 +55,9 @@ public class SearchServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         // Pass execution on to doPost
-            doPost (request, response);
+        doPost(request, response);
     }
 
     /**
@@ -72,23 +72,20 @@ public class SearchServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        //get the text to search
-        String champName = request.getParameter("searchVal");
-        
-        //create a SearchQuery helper object
-        SearchQuery sq = new SearchQuery();
-        
-        //Get the HTML table from the SearchQuery  object
-        sq.doSearch(champName);
-        String table = sq.getHTMLTable();
-         
-         //Pass execution control to read.jsp along with the table.
-         request.setAttribute("table", table);
-         String url = "/read.jsp";
-         
-         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-         dispatcher.forward(request, response);
-         
+            String firstName = request.getParameter("searchVal");
+            String lastName = request.getParameter("searchVal");
+            
+            
+            SearchQuery sq = new SearchQuery();
+            
+            sq.doSearch(firstName, lastName);
+            String table = sq.getHTMLTable();
+            
+            request.setAttribute("table", table);
+            String url = "/read.jsp";
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+            dispatcher.forward(request, response);
     }
 
     /**

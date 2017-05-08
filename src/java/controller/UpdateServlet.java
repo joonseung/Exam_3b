@@ -9,14 +9,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.lolChampions;
+import model.Customers;
 
 
 /**
  *
  * @author Abc
  */
-@WebServlet(name = "UpdateServlet", urlPatterns = {"/updateChamp"})
+@WebServlet(name = "UpdateServlet", urlPatterns = {"/updateCustomer"})
 public class UpdateServlet extends HttpServlet {
 
     /**
@@ -74,23 +74,32 @@ public class UpdateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        //get the form data and set up a Champ object
-        int champID = Integer.parseInt(request.getParameter("champID"));
-        String champName = request.getParameter("champName");
-        String champRole = request.getParameter("champRole");
-        int price = Integer.parseInt(request.getParameter("price"));
-        int skins = Integer.parseInt(request.getParameter("skins"));
+        //get the form data and set up a customer object
+        int customerID = Integer.parseInt(request.getParameter("customerID"));
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String ad1 = request.getParameter("ad1");
+        String ad2 = request.getParameter("ad2");
+        String city = request.getParameter("city");
+        String stateName = request.getParameter("stateName");
+        String zip = request.getParameter("zip");
+        String email = request.getParameter("email");
         
-        lolChampions champ = new lolChampions();
-        champ.setChampID(champID);
-        champ.setChampName(champName);
-        champ.setChampRole(champRole);
-        champ.setPrice(price);
-        champ.setSkins(skins);
+        Customers customer = new Customers();
+        customer.setCustomerID(customerID);
+        customer.setFirstName(firstName);
+        customer.setLastName(lastName);
+        customer.setAd1(ad1);
+        customer.setAd2(ad2);
+        customer.setCity(city);
+        customer.setStateName(stateName);
+        customer.setZip(zip);
+        customer.setEmail(email);
+       
         
         //create an UpdateQuery object and use it to update the friend
         UpdateQuery uq = new UpdateQuery();
-        uq.doUpdate(champ);
+        uq.doUpdate(customer);
         
         //pass control to the ReadServlet
         String url = "/read";

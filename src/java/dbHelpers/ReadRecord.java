@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.lolChampions;
+import model.Customers;
 
 /**
  *
@@ -26,11 +26,11 @@ public class ReadRecord {
     private Connection conn;
     private ResultSet results;
     
-    private lolChampions champ = new lolChampions();
-    private int champID;
+    private Customers customer = new Customers();
+    private int customerID;
     
     
-    public ReadRecord (int champID) {
+    public ReadRecord (int customerID) {
 
     try{
             Properties props = new Properties(); 
@@ -50,7 +50,7 @@ public class ReadRecord {
             String username = props.getProperty("user.name");
             String passwd = props.getProperty("user.password");
             
-            this. champID = champID;
+            this. customerID = customerID;
             
             Class.forName(driver);
             conn = DriverManager.getConnection(url, username, passwd);
@@ -66,24 +66,28 @@ public class ReadRecord {
 
         try {
             // set up a string to hold our query
-            String query = "SELECT * FROM lolChampions WHERE champID = ?";
+            String query = "SELECT * FROM customers WHERE customerID = ?";
             
             //create a preparedstatement using our query string
             PreparedStatement ps  = conn.prepareStatement(query);
             
             //fill in the preparedstatement
-            ps.setInt(1, champID);
+            ps.setInt(1, customerID);
             
             //execute the query
             this. results = ps.executeQuery();
             
             this. results.next();
             
-            champ.setChampID(this.results.getInt("champID"));
-            champ.setChampName(this.results.getString("champName"));
-            champ.setChampRole(this.results.getString("champRole"));
-            champ.setPrice(this.results.getInt("price"));
-            champ.setSkins(this.results.getInt("skins"));
+            customer.setCustomerID(this.results.getInt("customerID"));
+            customer.setFirstName(this.results.getString("firstName"));
+            customer.setLastName(this.results.getString("lastName"));
+            customer.setAd1(this.results.getString("ad1"));
+            customer.setAd2(this.results.getString("ad2"));
+            customer.setCity(this.results.getString("city"));
+            customer.setStateName(this.results.getString("stateName"));
+            customer.setZip(this.results.getString("zip"));
+            customer.setEmail(this.results.getString("email"));
             
         } catch (SQLException ex) {
             Logger.getLogger(ReadRecord.class.getName()).log(Level.SEVERE, null, ex);
@@ -91,9 +95,9 @@ public class ReadRecord {
         
  }
     
-    public lolChampions getChamp(){
+    public Customers getCustomer(){
     
-        return this.champ;
+        return this.customer;
     }
       
     

@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.lolChampions;
+import model.Customers;
 
 public class UpdateQuery {
     
@@ -44,18 +44,21 @@ public class UpdateQuery {
    
     }
     
-    public void doUpdate (lolChampions champ){
+    public void doUpdate (Customers customer){
     
         try {
-            String query = "UPDATE lolChampions SET champName = ?, champRole = ?, price = ?, skins =? WHERE champID = ?";
+            String query = "UPDATE customers SET firstName = ?, lastName = ?, ad1 = ?, ad2 =?, city = ?, stateName = ?, zip = ?, email = ? WHERE customerID = ?";
             
             PreparedStatement ps = conn.prepareStatement(query);
             
-            ps.setString(1, champ.getChampName());
-            ps.setString(2, champ.getChampRole());
-            ps.setInt(3, champ.getPrice());
-            ps.setInt(4, champ.getSkins());
-            ps.setInt(5, champ.getChampID());
+            ps.setString(1, customer.getFirstName());
+            ps.setString(2, customer.getLastName());
+            ps.setString(3, customer.getAd1());
+            ps.setString(4, customer.getAd2());
+            ps.setString(5, customer.getCity());
+            ps.setString(6, customer.getStateName());
+            ps.setString(7, customer.getZip());
+            ps.setString(8, customer.getEmail());
             
             ps.executeUpdate();
         } catch (SQLException ex) {

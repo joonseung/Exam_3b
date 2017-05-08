@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
-        <title>Search Champions</title>
+        <title>Search Customer</title>
     </head>
     <body>
         <div class="wrap"> <!--div to hold all other divs -->
@@ -15,12 +15,12 @@
 
             <div class="main"> <!--main div -->
 
-                <h1>Search Champions</h1>
+                <h1>Search Customer</h1>
                 
             <div class="search">
                 <form name="searchForm" action="search" method="get">
 
-                    <label> Enter Champion Name: </label><br>
+                    <label> Enter Customer Name: </label><br>
                     <input type="text" name="searchVal" value=""/>
 
                     <br> <br>

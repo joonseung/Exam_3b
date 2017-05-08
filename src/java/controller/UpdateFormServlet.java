@@ -14,7 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.lolChampions;
+import model.Customers;
 
 /**
  *
@@ -78,18 +78,18 @@ public class UpdateFormServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        //get the champID
-        int champID = Integer.parseInt(request.getParameter("champID"));
+        //get the customerID
+        int customerID = Integer.parseInt(request.getParameter("customerID"));
         
         //create a ReadRecord class
-        ReadRecord rr = new ReadRecord(champID);
+        ReadRecord rr = new ReadRecord(customerID);
         
-        //use ReadRecord to get the champ data
+        //use ReadRecord to get the customer data
         rr.doRead();
-        lolChampions champ = rr.getChamp();
+        Customers customer = rr.getCustomer();
         
-        //pass champ and control to updateForm.jsp
-        request.setAttribute("champ", champ);
+        //pass customer and control to updateForm.jsp
+        request.setAttribute("customer", customer);
         
         String url = "/updateForm.jsp";
         
