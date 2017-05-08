@@ -51,18 +51,18 @@ public class DeleteQuery {
             }   
     }
     
-    public void doDelete (int champID){
+    public void doDelete (int customerID){
         
         
         try {
             //set up string to hold our query
-            String query = "DELETE FROM lolChampions WHERE champID = ?";
+            String query = "DELETE FROM customers WHERE customerID = ?";
             
             //create a preparedstatement using our query string
             PreparedStatement ps = conn.prepareStatement(query);
            
             //fill in the preparedstatement
-            ps.setInt(1, champID);
+            ps.setInt(1, customerID);
            
             //execute the query
             ps.executeUpdate();
