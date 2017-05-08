@@ -59,6 +59,7 @@ public class UpdateQuery {
             ps.setString(6, customer.getStateName());
             ps.setString(7, customer.getZip());
             ps.setString(8, customer.getEmail());
+            ps.setInt (9, customer.getCustomerID());
             
             ps.executeUpdate();
         } catch (SQLException ex) {
@@ -66,6 +67,4 @@ public class UpdateQuery {
         }
         
     }
-    
-    
 }
