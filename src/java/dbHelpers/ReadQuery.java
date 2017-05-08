@@ -5,24 +5,26 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet; 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.lolChampions;
+import model.Customers;
+
 /**
  *
  * @author Abc
  */
 public class ReadQuery {
+
     private Connection conn;
     private ResultSet results;
-    
+
     public ReadQuery() {
-        
-    try{
-            Properties props = new Properties(); 
+
+        try {
+            Properties props = new Properties();
             InputStream instr = getClass().getResourceAsStream("dbConn.properties");
             try {
                 props.load(instr);
@@ -40,109 +42,137 @@ public class ReadQuery {
             String passwd = props.getProperty("user.password");
             Class.forName(driver);
             conn = DriverManager.getConnection(url, username, passwd);
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
-                Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
-    
-    public void doRead(){
-        
-        String query = "Select *from lolChampions ORDER BY champID ASC";
-        
+
+    public void doRead() {
+
+        String query = "Select *from customers ORDER BY customerID ASC";
+
         try {
             PreparedStatement ps = conn.prepareStatement(query);
             this.results = ps.executeQuery();
-            
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public String getHTMLTable(){
-        
+
+    public String getHTMLTable() {
+
         String table = "";
-        
+
         table += "<table>";
-        
+
         try {
-            
+
             table += "<thead>";
-                    table += "<th>";
-                    table += "ID";
-                    table += "</th>";
-                    
-                    table += "<th>";
-                    table += "Name";
-                    table += "</th>";
-                    
-                    table += "<th>";
-                    table += "Role";
-                    table += "</th>";
-                    
-                    table += "<th>";
-                    table += "Price";
-                    table += "</th>";
-                    
-                    table += "<th>";
-                    table += "Skins";
-                    table += "</th>";
-                    
-                    table += "<th>";
-                    table += "Action";
-                    table += "</th>";
-                    
-                table += "</thead>";
-                
-            while(this.results.next()){
-                
-                lolChampions champ = new lolChampions();
-                champ.setChampID(this.results.getInt("champID"));
-                champ.setChampName(this.results.getString("champName"));
-                champ.setChampRole(this.results.getString("champRole"));
-                champ.setPrice(this.results.getInt("price"));
-                champ.setSkins(this.results.getInt("skins"));
-                
-                
-                
+            table += "<th>";
+            table += "ID";
+            table += "</th>";
+
+            table += "<th>";
+            table += "First Name";
+            table += "</th>";
+
+            table += "<th>";
+            table += "Last Name";
+            table += "</th>";
+
+            table += "<th>";
+            table += "Address 1";
+            table += "</th>";
+
+            table += "<th>";
+            table += "Address 2";
+            table += "</th>";
+
+            table += "<th>";
+            table += "City";
+            table += "</th>";
+
+            table += "<th>";
+            table += "State";
+            table += "</th>";
+
+            table += "<th>";
+            table += "Zip Code";
+            table += "</th>";
+
+            table += "<th>";
+            table += "Email";
+            table += "</th>";
+
+            table += "</thead>";
+
+            while (this.results.next()) {
+
+                Customers customer = new Customers();
+                customer.setCustomerID(this.results.getInt("customerID"));
+                customer.setFirstName(this.results.getString("firstName"));
+                customer.setLastName(this.results.getString("lastName"));
+                customer.setAd1(this.results.getString("ad1"));
+                customer.setAd2(this.results.getString("ad2"));
+                customer.setCity(this.results.getString("city"));
+                customer.setStateName(this.results.getString("stateName"));
+                customer.setZip(this.results.getString("zip"));
+                customer.setEmail(this.results.getString("email"));
+
                 table += "<tr>";
-                
-                    table += "<td>";
-                    table += champ.getChampID();
-                    table += "</td>";
 
-                    table += "<td>";
-                    table += champ.getChampName();
-                    table += "</td>";
+                table += "<td>";
+                table += customer.getCustomerID();
+                table += "</td>";
 
-                    table += "<td>";
-                    table += champ.getChampRole();
-                    table += "</td>";
+                table += "<td>";
+                table += customer.getFirstName();
+                table += "</td>";
 
-                    table += "<td>";
-                    table += champ.getPrice();
-                    table += "</td>";
+                table += "<td>";
+                table += customer.getLastName();
+                table += "</td>";
 
-                    table += "<td>";
-                    table += champ.getSkins();
-                    table += "</td>";
-                    
-                    table += "<td>";
-                    table += "<a href = update?champID=" + champ.getChampID() +"> Update </a>" + "<a href = delete?champID=" + champ.getChampID() +"> Delete </a>";
-                    table += "</td>";
-                    
+                table += "<td>";
+                table += customer.getAd1();
+                table += "</td>";
+
+                table += "<td>";
+                table += customer.getAd2();
+                table += "</td>";
+
+                table += "<td>";
+                table += customer.getCity();
+                table += "</td>";
+
+                table += "<td>";
+                table += customer.getStateName();
+                table += "</td>";
+
+                table += "<td>";
+                table += customer.getZip();
+                table += "</td>";
+
+                table += "<td>";
+                table += customer.getEmail();
+                table += "</td>";
+
+                table += "<td>";
+                table += "<a href = update?customerID=" + customer.getCustomerID() + "> Update </a>" + "<a href = delete?customerID=" + customer.getCustomerID() + "> Delete </a>";
+                table += "</td>";
+
                 table += "</tr>";
             }
         } catch (SQLException ex) {
             Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
         table += "</table>";
-        
-                    return table;
+
+        return table;
     }
 }
