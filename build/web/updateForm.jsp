@@ -17,7 +17,7 @@
 
             <div class="main"> <!--main div -->
 
-                <h1>Update A Customer Record</h1>
+                <h1>Update A Customer Record - Advanced View </h1>
 
                 <div class="update">
                     <form name="updateForm" action="updateCustomer" method="get"> 

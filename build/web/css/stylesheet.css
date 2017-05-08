@@ -1,5 +1,5 @@
 /* wrapper div that holds all of the content divs for the page */
-.wrap {text-align:center; width:90%; margin:0 auto; border: 1px solid black; margin-top:25px;}
+.wrap {text-align:center; width:90%; margin:0 auto; border: 1px solid black; margin-top:25px; background-color: #D2B48C;}
 
 /* formats the page header */
 .header {text-align:left; padding:25px;}
@@ -18,7 +18,7 @@
 
 
 body {
-	color: black; background-color: #D2B48C;
+	color: black; background-color: #1a1400;
 	font-size: 12pt;
 	font-family: sans-serif;
 	text-align: center;
@@ -28,15 +28,24 @@ H1 {
    font-family: sans-serif;
    font-size: 36px;
    text-align:center;
-   background: #F08080;
-   color: white;
+   background: #ffcc00;
+   color: #1a1400;
 }
+
+H2 {
+   font-family: sans-serif;
+   font-size: 36px;
+   text-align:center;
+   background: #80002a;
+   color: #1a1400;
+}
+
 
 table {
     border-collapse: collapse;
     width: 100%;
-    background-color:#F08080;
-    color: #696969;
+    background-color:#CCCCCC;
+    color: black;
 }
 
 table, th, td {
@@ -49,21 +58,21 @@ table, th, td {
 
 th {
     height: 75px;
-    background-color:#FFFF99;
-    color: #F08080;
+    background-color:#696969;
+    color: white;
     text-align: center;
     
 }
 
 
 tr:nth-child(even) {background-color: #F2F2F2}
-tr:hover{background-color: #CCCCCC}
+tr:hover{background-color:#fff9e6}
 
 .add {
    font-family: sans-serifn;
    font-size: 24px;
    text-align:center;
-   background-color:#FFFF99;
+   background-color:#F2F2F2;
    color: #F08080;
    padding: 50px;
    border: 1px solid black;
@@ -73,8 +82,8 @@ tr:hover{background-color: #CCCCCC}
    font-family: sans-serif;
    font-size: 24px;
    text-align:center;
-   background-color:#FFFF99;
-   color: #F08080;
+   background-color:#F2F2F2;
+   color: Black;
    padding: 50px;
    border: 1px solid black;
 }
@@ -83,7 +92,7 @@ tr:hover{background-color: #CCCCCC}
    font-family: sans-serif;
    font-size: 24px;
    text-align:center;
-   background-color:#FFFF99;
+   background-color:#F2F2F2;
    color: #F08080;
    padding: 50px;
    border: 1px solid black;

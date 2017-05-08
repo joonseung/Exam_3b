@@ -18,12 +18,14 @@
             <%@ include file="includes/menu.jsp" %>
 
             <div class="main"> <!--main div -->
-                <h1> UI Game Customers </h1>
+                <h1> UI Game Customers - Advanced View </h1>
                 <%= table%>
 
                 <br><br>
                 
-                <a href="add">Add A New Record</a>
+                <a href="add"> [ Add A New Customer ]</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="search.jsp"> [ Advanced Search ]</a>
 
             </div> <!-- close main div -->
 

@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
-        <title>JSP Page</title>  
+        <title> UI Game Customer Database</title>  
     </head>
     <body>
         <div class="wrap"> <!--div to hold all other divs -->

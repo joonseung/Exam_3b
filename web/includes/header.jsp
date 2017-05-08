@@ -5,7 +5,9 @@
 		</div> <!-- close header image div -->
 	
 		<div class="headerText"> <!--header text divs -->
-			<h1>Welcome to UI Game </h1>
+			<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to UI Game
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
 		</div> <!-- close header text div -->
 	
 		<br clear="all">

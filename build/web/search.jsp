@@ -15,7 +15,7 @@
 
             <div class="main"> <!--main div -->
 
-                <h1>Search Customer</h1>
+                <h1>Search Customer - Advanced View </h1>
                 
             <div class="search">
                 <form name="searchForm" action="search" method="get">

@@ -25,7 +25,7 @@
                     <h3>Managing Data is Only Available For Managers.
                         <br><br>
                         Please Login!</h3>
-                    <br> <br>
+                    <br>
                     <form action="read" method="get">
                         <input type="submit" value="I Am a Manager"/>
                     </form>
