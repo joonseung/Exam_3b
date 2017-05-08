@@ -15,7 +15,7 @@
 
             <div class="main"> <!--main div -->
 
-                <h1>LOL Champions Database</h1>
+                <h1>Welcome to UI Game</h1>
 
                 <br> <br> <br>
 

@@ -18,11 +18,12 @@
             <%@ include file="includes/menu.jsp" %>
 
             <div class="main"> <!--main div -->
-                <h1>League of Legends Champions</h1>
+                <h1> UI Game Customers </h1>
                 <%= table%>
 
                 <br><br>
-
+                
+                <a href="add">Add A New Record</a>
 
             </div> <!-- close main div -->
 

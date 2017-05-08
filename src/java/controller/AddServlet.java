@@ -14,13 +14,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.lolChampions;
+import model.Customers;
 
 /**
  *
  * @author Abc
  */
-@WebServlet(name = "AddServlet", urlPatterns = {"/addChampion"})
+@WebServlet(name = "AddServlet", urlPatterns = {"/addCustomer"})
 public class AddServlet extends HttpServlet {
 
     /**
@@ -79,23 +79,31 @@ public class AddServlet extends HttpServlet {
             throws ServletException, IOException {
         
         // get the data
-        String champName = request.getParameter("champName");
-        String champRole = request.getParameter("champRole");
-        int price = Integer.parseInt(request.getParameter("price"));
-        int skins = Integer.parseInt(request.getParameter("skins"));
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String ad1 = request.getParameter("ad1");
+        String ad2 = request.getParameter("ad2");
+        String city = request.getParameter("city");
+        String stateName = request.getParameter("stateName");
+        String zip = request.getParameter("zip");
+        String email = request.getParameter("email");
          
-        //set up a champ object
-        lolChampions champ = new lolChampions();
-        champ.setChampName(champName);
-        champ.setChampRole(champRole);
-        champ.setPrice(price);
-        champ.setSkins(skins);
+        //set up a customer object
+        Customers customer = new Customers();
+        customer.setFirstName(firstName);
+        customer.setLastName(lastName);
+        customer.setAd1(ad1);
+        customer.setAd2(ad2);
+        customer.setCity(city);
+        customer.setStateName(stateName);
+        customer.setZip(zip);
+        customer.setEmail(email);
         
         //set up an addQuery object
         AddQuery aq = new AddQuery(); 
         
-        //pass the champ to addQuery to add the database
-        aq.doAdd(champ);
+        //pass the customer to addQuery to add the database
+        aq.doAdd(customer);
         
         //pass execution control to the ReadServlet
         String url = "/read";

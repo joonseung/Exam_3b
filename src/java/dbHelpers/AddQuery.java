@@ -14,7 +14,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.lolChampions;
+import model.Customers;
 
 /**
  *
@@ -52,19 +52,24 @@ public class AddQuery {
             }
             
         }
-        // lolCahmpions and champ object.... Freinds class and friend object ... but can't find object... see " https://www.youtube.com/watch?v=3ZmipkRPRRA" 10:26 if question
-    // object is on AddServlet.jav  which is champ
-    public void doAdd (lolChampions champ){
+        // lolCahmpions and customer object.... Freinds class and friend object ... but can't find object... see " https://www.youtube.com/watch?v=3ZmipkRPRRA" 10:26 if question
+    // object is on AddServlet.jav  which is customer
+    public void doAdd (Customers customer){
     
         try {
-            String query = "INSERT INTO lolChampions (champName, champRole, price, skins) VALUES (?, ?, ?, ?)"; // said friends table but used lolChampions table of mine
+            String query = "INSERT INTO customers (firstName, lastName, ad1, ad2, city, stateName, zip, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"; 
             
             PreparedStatement ps = conn.prepareStatement(query);
             
-            ps.setString(1, champ.getChampName());
-            ps.setString(2, champ.getChampRole());
-            ps.setInt(3, champ.getPrice());
-            ps.setInt(4, champ.getSkins());
+            ps.setString(1, customer.getFirstName());
+            ps.setString(2, customer.getLastName());
+            ps.setString(3, customer.getAd1());
+            ps.setString(4, customer.getAd2());
+            ps.setString(5, customer.getCity());
+            ps.setString(6, customer.getStateName());
+            ps.setString(7, customer.getZip());
+            ps.setString(8, customer.getEmail());
+
             
             ps.executeUpdate();
             

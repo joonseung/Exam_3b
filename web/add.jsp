@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
-        <title> Add A New Champion</title>
+        <title> Add A New Customer</title>
 
     </head>
     <body>
@@ -16,25 +16,40 @@
 
             <div class="main"> <!--main div -->
 
-                <h1>Add A New Champion</h1>
+                <h1>Add A New Customer</h1>
 
                 <div class="add">
-                    <form name="addFrom" action="addChampion" method="get">
+                    <form name="addFrom" action="addCustomer" method="get">
 
-                        <label> Name: </label><br>
-                        <input type ="text" name="champName" value=""/>
+                        <label> First Name: </label><br>
+                        <input type ="text" name="firstName" value=""/>
                         <br>
-                        <label> Role: </label><br>
-                        <input type ="text" name="champRole" value=""/>
+                        <label> Last Name: </label><br>
+                        <input type ="text" name="lastName" value=""/>
                         <br>
-                        <label> Price: </label><br>
-                        <input type ="text" name="price" value=""/>
+                        <label> Address 1: </label><br>
+                        <input type ="text" name="ad1" value=""/>
                         <br>
-                        <label> Skins: </label><br>
-                        <input type ="text" name="skins" value=""/>
+                        <label> Address 2: </label><br>
+                        <input type ="text" name="ad2" value=""/>
+                        <br>
+                        <label> City: </label><br>
+                        <input type ="text" name="city" value=""/>
+                        <br>
+                        <label> State Name: </label><br>
+                        <input type ="text" name="stateName" value=""/>
+                        <br>
+                        <label> Zip: </label><br>
+                        <input type ="text" name="zip" value=""/>
+                        <br>
+                        <label> Email: </label><br>
+                        <input type ="text" name="email" value=""/>
+                        <br>
+                        
                         <br><br>
+                        
                         <input type ="reset" name="reset" value="Clear"/>
-                        <input type ="submit" name="submit" value="Submit"/>
+                        <input type ="submit" name="submit" value="Add Record"/>
                     </form>
                 </div>
 
