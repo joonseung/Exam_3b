@@ -22,28 +22,30 @@
                     <form name="addFrom" action="addCustomer" method="get">
 
                         <label> First Name: </label><br>
-                        <input type ="text" name="firstName" value=""/>
+                        <input type ="text" name="firstName" value="" required/>
                         <br>
                         <label> Last Name: </label><br>
-                        <input type ="text" name="lastName" value=""/>
+                        <input type ="text" name="lastName" value="" required/>
                         <br>
                         <label> Address 1: </label><br>
-                        <input type ="text" name="ad1" value=""/>
+                        <input type ="text" name="ad1" value="" required/>
                         <br>
                         <label> Address 2: </label><br>
-                        <input type ="text" name="ad2" value=""/>
+                        <input type ="text" name="ad2" value="" required/>
                         <br>
                         <label> City: </label><br>
-                        <input type ="text" name="city" value=""/>
+                        <input type ="text" name="city" value="" required/>
                         <br>
-                        <label> State Name: </label><br>
-                        <input type ="text" name="stateName" value=""/>
+                        <label> State (ex. IA, IL, NY) : </label><br>
+                        <input type ="text" name="stateName" value="" required/>
+                        <label>* ex. IA, IL, NY </label>
                         <br>
-                        <label> Zip: </label><br>
-                        <input type ="text" name="zip" value=""/>
+                        <label> 5 digit Zip Code: </label><br>
+                        <input type ="text" name="zip" value="" required/>
                         <br>
-                        <label> Email: </label><br>
-                        <input type ="text" name="email" value=""/>
+                        <label> Email : </label><br>
+                        <input type ="text" name="email" value="" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"title="*(Required):example@mail.com"/>
+                        <label>* ex. example@mail.com </label>
                         <br>
                         
                         <br><br>
