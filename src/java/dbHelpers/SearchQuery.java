@@ -100,10 +100,6 @@ public class SearchQuery {
             table += "</th>";
             
             table += "<th>";
-            table += "City";
-            table += "</th>";
-            
-            table += "<th>";
             table += "State Name";
             table += "</th>";
             
@@ -113,6 +109,10 @@ public class SearchQuery {
             
             table += "<th>";
             table += "Email";
+            table += "</th>";
+            
+            table += "<th>";
+            table += "Action";
             table += "</th>";
 
             table += "</thead>";

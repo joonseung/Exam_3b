@@ -11,6 +11,11 @@
 
 /* formats the page fotter */
 .footer {text-align:center; padding:25px;}
+.login{
+   text-align:center
+       
+}
+
 
 body {
 	color: black; background-color: #D2B48C;
@@ -139,3 +144,10 @@ float: left;
 /*End hide*/
 /*Mac IE 5*/
 * html .navlist li:first-child { border-left: 0; }
+
+h3{
+    font-family: sans-serif;
+   font-size: 24px;
+   text-align:center;
+    
+}
