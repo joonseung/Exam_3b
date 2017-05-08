@@ -5,15 +5,15 @@
         <li><a href="add">Add A New Record</a></li>
         <li><a href="search.jsp">Search Records</a></li>
     </ul>
-    <div class="search">
-                <form name="searchForm" action="search" method="get">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="quickSearch" >
+        <form name="searchForm" action="search" method="get">
 
-                    
-                    <input type="text" name="searchVal" value=""/>
+            <input type="text" name="searchVal" value=""/>
 
-                    <input type="submit" name="submit" value="Quick Search"/>         
+            <input type="submit" name="submit" value="Quick Search"/>         
 
-                </form>
-            </div>
+        </form>
+    </div>
 </div>
 
